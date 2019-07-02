@@ -35,16 +35,14 @@
 </div>
 <% end %>
 
-<div id= "companies">
 <% @companies.each do |company| %>
-      <tr id= "companies">
-        <td id= "company"><%= company.name %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<tr id="<%= company.id%>">
+<td id="nombre<%= company.id %>"><%= company.name %></td>
+<td><%= link_to 'Show', company %></td>
+<td><%= link_to 'Edit', edit_company_path(company), data:{remote:true} %></td>
+<td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?', remote: true } %></td>
+</tr>
     <% end %>
-  </div>
   
   </tbody>
 </table>
