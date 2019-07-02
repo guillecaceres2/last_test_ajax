@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'claims/create'
   resources :companies
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

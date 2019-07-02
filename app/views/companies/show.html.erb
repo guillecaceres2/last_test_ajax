@@ -5,5 +5,13 @@
   <%= @company.name %>
 </p>
 
+<ol>
+<%@claims.each do |claim| %>
+<% if (@company.id == claim.company_id) %>
+<li><%= claim.content %></li>
+<% end %>
+<% end %>
+</ol>
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
