@@ -6,4 +6,3 @@ def create
 @claim.save
 end
 end
-end

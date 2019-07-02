@@ -10,6 +10,7 @@
     </tr>
   </thead>
 
+<tbody>
   <%= form_with(model: @company) do |form| %>
 <% if @company.errors.any? %>
 <div id="error_explanation">
@@ -34,21 +35,16 @@
 </div>
 <% end %>
 
-
-  <tbody>
-    <% @companies.each do |company| %>
-      <tr>
-        <td><%= company.name %></td>
+<div id= "companies">
+<% @companies.each do |company| %>
+      <tr id= "companies">
+        <td id= "company"><%= company.name %></td>
         <td><%= link_to 'Show', company %></td>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+  </div>
+  
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Company', new_company_path %>
-
-
